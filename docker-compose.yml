@@ -2,13 +2,14 @@ name: shopping-cart-db
 
 services:
   postgres:
+    container_name: shopping-cart-db-Villamil
     image: postgres:16-alpine
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-shopping_cart}
       POSTGRES_USER: ${POSTGRES_USER:-shopping_cart_user}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-shopping_cart_password}
     ports:
-      - "${POSTGRES_PORT:-5433}:5432"
+      - "${POSTGRES_PORT:-5435}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
